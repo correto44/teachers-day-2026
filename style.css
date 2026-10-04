@@ -1,0 +1,672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #071426;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+/* ================= GENERAL ================= */
+
+.section {
+    min-height: 100vh;
+    position: relative;
+    padding: 30px 7%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= FLOATING DECORATIONS ================= */
+
+.floating-decoration {
+    position: fixed;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.15;
+    font-size: 28px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.decoration-1 {
+    top: 18%;
+    left: 5%;
+}
+
+.decoration-2 {
+    top: 35%;
+    right: 6%;
+    animation-delay: 1s;
+}
+
+.decoration-3 {
+    bottom: 18%;
+    left: 7%;
+    animation-delay: 2s;
+}
+
+.decoration-4 {
+    top: 70%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+.decoration-5 {
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 4s;
+}
+
+
+/* ================= HERO ================= */
+
+.hero-section {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(40, 82, 130, 0.55),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #071426,
+            #0b1d34 55%,
+            #071426
+        );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    color: #e8c878;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.year {
+    color: #9caec4;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+    max-width: 750px;
+    width: 100%;
+
+    text-align: center;
+
+    margin: auto;
+    padding: 45px 0;
+
+    animation: appear 1.2s ease;
+}
+
+
+/* ================= PHOTO ================= */
+
+.photo-frame {
+    width: 190px;
+    height: 190px;
+
+    margin: 0 auto 30px;
+
+    padding: 6px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(232, 200, 120, 0.8);
+
+    position: relative;
+
+    box-shadow:
+        0 0 30px rgba(232, 200, 120, 0.18),
+        0 0 80px rgba(50, 100, 160, 0.18);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+.photo-glow {
+    position: absolute;
+
+    inset: -12px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(232, 200, 120, 0.15);
+
+    animation: pulse 3s infinite;
+}
+
+
+/* ================= TEXT ================= */
+
+.eyebrow {
+    color: #e8c878;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 18px;
+}
+
+.hero-content h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(40px, 7vw, 68px);
+
+    line-height: 1.12;
+
+    font-weight: 400;
+
+    color: #ffffff;
+}
+
+.hero-content h1 span {
+    color: #e8c878;
+}
+
+.hero-text {
+    color: #b8c6d7;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin: 25px auto 32px;
+
+    max-width: 560px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.primary-button {
+    border: 1px solid #e8c878;
+
+    background: #e8c878;
+
+    color: #101b2b;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow:
+        0 8px 25px rgba(232, 200, 120, 0.12);
+}
+
+.primary-button:hover {
+    background: transparent;
+
+    color: #e8c878;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(232, 200, 120, 0.18);
+}
+
+
+/* ================= BOTTOM NOTE ================= */
+
+.bottom-note {
+    color: #70849e;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    padding: 15px;
+
+    text-align: center;
+}
+
+
+/* ================= CHALLENGES ================= */
+
+.challenge-section {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(39, 78, 125, 0.35),
+            transparent 35%
+        ),
+        #09182b;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-heading {
+    max-width: 700px;
+
+    text-align: center;
+
+    margin: 45px auto 40px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+.section-heading p:last-child {
+    color: #94a7bd;
+
+    font-size: 14px;
+}
+
+
+/* ================= CHALLENGE CARD ================= */
+
+.challenge-card {
+    width: min(700px, 100%);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: cardAppear 0.7s ease;
+}
+
+.challenge-number {
+    color: #e8c878;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 20px;
+}
+
+.challenge-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(23px, 4vw, 32px);
+
+    line-height: 1.4;
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= OPTIONS ================= */
+
+.options {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.option-button {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #d7e1ed;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    text-align: left;
+
+    transition: all 0.25s ease;
+}
+
+.option-button:hover {
+    border-color: rgba(232, 200, 120, 0.7);
+
+    background: rgba(232, 200, 120, 0.06);
+
+    transform: translateY(-2px);
+
+    color: #ffffff;
+}
+
+
+/* ================= FEEDBACK ================= */
+
+.feedback {
+    min-height: 30px;
+
+    margin-top: 22px;
+
+    color: #e8c878;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= FINAL SECTION ================= */
+
+.final-section {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(37, 76, 120, 0.55),
+            transparent 55%
+        ),
+        #071426;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.final-card {
+    width: min(780px, 100%);
+
+    text-align: center;
+
+    padding: 55px 45px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(232, 200, 120, 0.18);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3);
+
+    animation: cardAppear 1s ease;
+}
+
+.final-decoration {
+    color: #e8c878;
+
+    font-size: 18px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= FINAL PHOTO ================= */
+
+.final-photo {
+    width: 130px;
+    height: 130px;
+
+    margin: 0 auto 30px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    border: 1px solid #e8c878;
+}
+
+.final-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* ================= FINAL TEXT ================= */
+
+.final-card h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    line-height: 1.3;
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+.message {
+    max-width: 620px;
+
+    margin: auto;
+
+    color: #b8c6d7;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.message p {
+    margin-bottom: 18px;
+}
+
+.final-line {
+    color: #e8c878;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    margin: 30px 0;
+}
+
+.teachers-day {
+    font-family: Georgia, serif;
+
+    color: #e8c878;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+    font-weight: 400;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #061120;
+
+    color: #61758e;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(5deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    .section {
+        padding: 20px 5%;
+    }
+
+    .navbar {
+        padding-top: 5px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    .year {
+        font-size: 10px;
+    }
+
+    .photo-frame {
+        width: 155px;
+        height: 155px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .challenge-card {
+        padding: 28px 20px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .final-card {
+        padding: 40px 22px;
+    }
+
+    .message {
+        font-size: 14px;
+    }
+
+    .floating-decoration {
+        font-size: 20px;
+    }
+}
